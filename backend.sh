@@ -108,12 +108,12 @@ grub-install $devins
 grub-mkconfig -o /boot/grub/grub.cfg
 echo
 echo Set password for root
-passwd
+passwd -R /mnt
 echo
 read -p "Type the name of the default user: " username
-useradd -m $username
+useradd -R /mnt -m $username
 echo Set the password for $username
-passwd $username
+passwd -R /mnt $username
 echo Installation finished!
 echo Remove USB and press enter to reboot
 read
