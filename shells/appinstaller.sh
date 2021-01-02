@@ -1,5 +1,3 @@
-stty tostop
-stty -tostop
 echo Installing Applications
 echo
 echo 1. Bones [Bare minimum to run the desktop]
