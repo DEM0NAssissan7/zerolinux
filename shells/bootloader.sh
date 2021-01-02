@@ -6,7 +6,7 @@ pacman -r /mnt --noconfirm -S efibootmgr grub
 echo "grub-install $devins;grub-mkconfig -o /boot/grub/grub.cfg" | arch-chroot /mnt
 echo Finished installing the bootloader!
 fi
-echo Setting up startup services
+echo Installing network manager
 pacman -r /mnt --noconfirm -S networkmanager
 systemctl --root=/mnt enable NetworkManager
 exit
