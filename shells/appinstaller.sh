@@ -22,6 +22,7 @@ pacman -r /mnt --noconfirm -S $bones $minimal
 fi
 if [[ $insnumber = 2 ]]; then
 echo Installing Standard...
+bones=`cat /tmp/apps/bones.list`
 minimal=`cat /tmp/apps/minimal.list`
 standard=`cat /tmp/apps/standard.list`
 pacman -r /mnt --noconfirm -S $bones $minimal $standard

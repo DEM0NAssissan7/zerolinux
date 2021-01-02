@@ -8,5 +8,5 @@ echo Finished installing the bootloader!
 fi
 echo Setting up startup services
 pacman -r /mnt --noconfirm -S networkmanager
-echo systemctl enable NetworkManager | arch-chroot /mnt
+systemctl --root=/mnt enable NetworkManager
 exit
