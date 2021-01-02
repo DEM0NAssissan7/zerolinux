@@ -13,3 +13,4 @@ echo Setting up startup services
 pacman -r /mnt --noconfirm -S networkmanager
 systemctl --root=/mnt enable NetworkManager
 systemctl --root=/mnt enable gdm
+echo

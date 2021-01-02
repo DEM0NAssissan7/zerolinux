@@ -8,6 +8,7 @@ read -p "Press enter to continue..."
 echo
 rm -r /tmp/zerolinux
 cp -r ../zerolinux /tmp
+stty -tostop
 
 #Chmodding the scripts
 chmod +x /tmp/zerolinux/shells/date.sh
