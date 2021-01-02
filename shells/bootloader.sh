@@ -8,5 +8,5 @@ echo Finished installing the bootloader!
 fi
 echo Installing network manager
 pacman -r /mnt --noconfirm -S networkmanager
-systemctl --root=/mnt enable NetworkManager
+#systemctl --root=/mnt enable NetworkManager
 exit
