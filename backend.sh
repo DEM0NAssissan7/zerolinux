@@ -18,12 +18,12 @@ chmod +x /tmp/zerolinux/shells/bootloader.sh
 chmod +x /tmp/zerolinux/shells/users.sh
 
 #Executing the scripts
-exec /tmp/zerolinux/shells/date.sh
-exec /tmp/zerolinux/shells/partitioner.sh
-exec /tmp/zerolinux/shells/sysinstaller.sh
-exec /tmp/zerolinux/shells/appinstaller.sh
-exec /tmp/zerolinux/shells/bootloader.sh
-exec /tmp/zerolinux/shells/users.sh
+bash /tmp/zerolinux/shells/date.sh
+bash /tmp/zerolinux/shells/partitioner.sh
+bash /tmp/zerolinux/shells/sysinstaller.sh
+bash /tmp/zerolinux/shells/appinstaller.sh
+bash /tmp/zerolinux/shells/bootloader.sh
+bash /tmp/zerolinux/shells/users.sh
 
 #Finishing garbage
 echo Installation finished!
