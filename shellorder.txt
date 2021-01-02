@@ -2,7 +2,7 @@ partitioner.sh
 sysinstaller.sh
 locales.sh
 date.sh
+users.sh
 appinstaller.sh
 bootloader.sh
-users.sh
 final.sh

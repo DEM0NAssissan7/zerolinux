@@ -4,7 +4,7 @@ echo 1. Bones [Bare minimum to run the desktop]
 echo 2. Minimal [Small set of apps]
 echo 3. Standard [A general set of apps]
 echo
-read -p "Select which number to install [1,2,3]: " insnumber
+read -p "Select which number to install [1 / 2 / 3]: " insnumber
 echo You have selected option $insnumber
 echo
 mkdir /mnt/home

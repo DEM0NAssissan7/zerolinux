@@ -22,6 +22,7 @@ if [[ $resp1 = "y" ]]; then
 read -p "Enter the /home partition: " homepart
 read -p "Enter the swap partition [NOT SUPPORTED]: " swappart
 fi
+read -p "Are you SURE these drives are correct? [ENTER] "
 echo Formatting partitions...
 mkfs.ext4 $rootpart
 if [[ $bootpart ]]; then mkfs.ext4 $bootpart;fi

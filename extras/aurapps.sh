@@ -1,9 +1,11 @@
-cd /tmp 
 git clone https://aur.archlinux.org/google-chrome.git
 cd google-chrome
-makepkg -si
+sudo -u guest makepkg -si
+cd ..
+rm -r google-chrome
 
-cd /tmp
 git clone https://aur.archlinux.org/gnome-shell-extension-appindicator.git
 cd gnome-shell-extension-appindicator
-makepkg -si
+sudo -u guest makepkg -si
+cd ..
+rm -r gnome-shell-extension-appindicator
