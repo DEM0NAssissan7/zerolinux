@@ -8,4 +8,5 @@ rm -r zerolinux
 git clone https://github.com/DEM0NAssissan7/zerolinux
 chmod +x zerolinux/backend.sh
 chmod +x zerolinux/reinstall.sh
+chmod +x zerolinux/nocrash.sh
 echo Finished
