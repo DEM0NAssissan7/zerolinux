@@ -1,6 +1,7 @@
 lsblk
 echo
 read -p "Enter the device you wish to install Zero Linux on: " devins
+$devins >> /mnt/devins
 echo Entering partitioner...
 cfdisk $devins
 echo
