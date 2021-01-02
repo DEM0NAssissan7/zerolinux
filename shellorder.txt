@@ -1,0 +1,6 @@
+1. date.sh
+2. partitioner.sh
+3. sysinstaller.sh
+4. appinstaller.sh
+5. bootloader.sh
+6. users.sh
