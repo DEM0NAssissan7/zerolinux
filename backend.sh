@@ -65,10 +65,11 @@ cp -r apps /mnt/tmp/
 echo
 echo Installing extra software
 echo
-arch-chroot /mnt
+echo
+echo
 echo Updating pacman repositories
-pacman --noconfirm -Syu
-pacman --noconfirm -S networkmanager grub
+pacman -r /mnt --noconfirm -Syu
+pacman -r /mnt --noconfirm -S networkmanager grub
 systemctl enable NetworkManager
 echo
 echo Installing Base System
@@ -88,17 +89,17 @@ echo
 
 if [[ $distro = 1 ]]; then
 echo Installing Barebones...
-y | pacman --noconfirm -S $bones
+pacman -r /mnt --noconfirm -S $bones
 fi
 
 if [[ $distro = 2 ]]; then
 echo Installing Minimal...
-y | pacman --noconfirm -S $bones $minimal
+pacman -r /mnt --noconfirm -S $bones $minimal
 fi
 
 if [[ $distro = 2 ]]; then
 echo Installing Standard...
-y | pacman --noconfirm -S $bones $minimal $standard
+pacman -r /mnt --noconfirm -S $bones $minimal $standard
 fi
 
 echo
@@ -115,7 +116,6 @@ read -p "Type the name of the default user: " username
 useradd -m $username
 echo Set the password for $username
 passwd $username
-exit
 echo Installation finished!
 echo Remove USB and press enter to reboot
 read
