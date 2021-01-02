@@ -60,11 +60,11 @@ echo
 echo Generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
 echo
-echo Installing extra software
-echo
 echo Loading install files into tmp file
 mkdir /mnt/tmp
 cp -r apps /mnt/tmp/
+echo
+echo Installing extra software
 echo
 arch-chroot /mnt
 yes | pacman -S networkmanager grub
