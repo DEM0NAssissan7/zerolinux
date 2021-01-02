@@ -15,4 +15,3 @@ echo
 echo Updating pacman repositories
 pacman -r /mnt --noconfirm -Syu
 echo
-exit

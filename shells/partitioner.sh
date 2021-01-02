@@ -41,4 +41,3 @@ if [[ $homepart ]]; then
 	mount $homepart /mnt/home
 fi
 echo
-exit

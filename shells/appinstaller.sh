@@ -29,4 +29,3 @@ arch-chroot /mnt pacman --noconfirm -S xorg-server xorg-xinit gnome-shell nautil
 fi
 echo Finished installing applications!
 echo
-exit
