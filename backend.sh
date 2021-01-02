@@ -99,7 +99,6 @@ if [[ $distro = 2 ]]; then
 echo Installing Standard...
 pacman -r /mnt --noconfirm -S $bones $minimal $standard
 fi
-
 echo
 echo Finished installing applications!
 echo
