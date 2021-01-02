@@ -8,11 +8,12 @@ echo
 echo Select partitions to format
 lsblk
 echo
-read -p "Select which partition you wish to install your root partitions [REQUIRED]: " rootpart
+read -p "Select the partition to install your root partition [REQUIRED]: " rootpart
 echo
 echo If any of these are not required, leave blank
-read -p "Enter the /boot partition [REQUIRED]: " bootpart
-read -p "Enter the EFI partition [REQUIRED]: " efipart
+echo You MUST have one
+read -p "Enter the /boot partition: " bootpart
+read -p "Enter the EFI partition: " efipart
 echo
 echo Next are optional mounts
 resp1=n
