@@ -19,7 +19,7 @@ chmod +x /tmp/zerolinux/shells/bootloader.sh
 chmod +x /tmp/zerolinux/shells/users.sh
 
 #Executing the scripts
-bash nocrash.sh
+./nocrash.sh
 bash /tmp/zerolinux/shells/date.sh
 bash /tmp/zerolinux/shells/partitioner.sh
 bash /tmp/zerolinux/shells/sysinstaller.sh
