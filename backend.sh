@@ -70,9 +70,9 @@ echo
 echo Updating pacman repositories
 pacman -r /mnt --noconfirm -Syu
 pacman -r /mnt --noconfirm -S networkmanager grub
-systemctl enable NetworkManager
+echo systemctl enable NetworkManager | arch-chroot /mnt
 echo
-echo Installing Base System
+echo Installing System Applications
 echo
 bones=`cat /tmp/apps/bones.list`
 minimal=`cat /tmp/apps/minimal.list`
@@ -96,13 +96,16 @@ if [[ $distro = 2 ]]; then
 echo Installing Standard...
 pacman -r /mnt --noconfirm -S $bones $minimal $standard
 fi
-echo
 echo Finished installing applications!
 echo
-echo Install bootloader
+res3=y
+read -p "Do you wish to install the GRUB bootloader [In most cases, yes]: [Y/n] " res3
+if [[ $res3 = y ]]; then
+echo Installing bootloader
 pacman -r /mnt --noconfirm -S efibootmgr
 echo "grub-install $devins;grub-mkconfig -o /boot/grub/grub.cfg" | arch-chroot /mnt
-echo
+echo Finished installing the bootloader!
+fi
 echo Set password for root
 passwd -R /mnt
 read -p "Type the name of the default user: " username
