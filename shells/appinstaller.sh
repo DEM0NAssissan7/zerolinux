@@ -20,7 +20,7 @@ bones=`cat /tmp/apps/bones.list`
 minimal=`cat /tmp/apps/minimal.list`
 pacman -r /mnt --noconfirm -S xorg-server xorg-xinit gnome-shell nautilus gnome-terminal gnome-tweaks gnome-control-center xdg-user-dirs gdm firefox nano gedit wget curl gnome-backgrounds gnome-calculator gnome-screenshot gnome-system-monitor gnome-icon-theme
 fi
-if [[ $insnumber = 2 ]]; then
+if [[ $insnumber = 3 ]]; then
 echo Installing Standard...
 bones=`cat /tmp/apps/bones.list`
 minimal=`cat /tmp/apps/minimal.list`
