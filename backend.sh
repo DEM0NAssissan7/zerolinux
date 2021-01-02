@@ -61,13 +61,14 @@ echo Generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
 echo
 echo Loading install files into tmp file
-mkdir /mnt/tmp
 cp -r apps /mnt/tmp/
 echo
 echo Installing extra software
 echo
 arch-chroot /mnt
-yes | pacman -S networkmanager grub
+echo Updating pacman repositories
+pacman --noconfirm -Syu
+pacman --noconfirm -S networkmanager grub
 systemctl enable NetworkManager
 echo
 echo Installing Base System
@@ -83,23 +84,21 @@ while [[ $distro != "" ]]; do
 read -p "Select which number to install" distro
 done
 echo You have selected option $distro
-echo Updating pacman repositories
-y | pacman -Syu
 echo
 
 if [[ $distro = 1 ]]; then
 echo Installing Barebones...
-y | pacman -S $bones
+y | pacman --noconfirm -S $bones
 fi
 
 if [[ $distro = 2 ]]; then
 echo Installing Minimal...
-y | pacman -S $bones $minimal
+y | pacman --noconfirm -S $bones $minimal
 fi
 
 if [[ $distro = 2 ]]; then
 echo Installing Standard...
-y | pacman -S $bones $minimal $standard
+y | pacman --noconfirm -S $bones $minimal $standard
 fi
 
 echo
