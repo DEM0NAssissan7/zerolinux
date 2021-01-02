@@ -104,12 +104,10 @@ echo Finished installing applications!
 echo
 echo Install bootloader
 pacman -r /mnt --noconfirm -S efibootmgr
-echo grub-install $devins | arch-chroot /mnt
-echo grub-mkconfig -o /boot/grub/grub.cfg | arch-chroot /mnt
+echo "grub-install $devins;grub-mkconfig -o /boot/grub/grub.cfg" | arch-chroot /mnt
 echo
 echo Set password for root
 passwd -R /mnt
-echo
 read -p "Type the name of the default user: " username
 useradd -R /mnt -m $username
 echo Set the password for $username
