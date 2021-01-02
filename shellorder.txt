@@ -1,6 +1,8 @@
-1. date.sh
-2. partitioner.sh
-3. sysinstaller.sh
-4. appinstaller.sh
-5. bootloader.sh
-6. users.sh
+partitioner.sh
+sysinstaller.sh
+locales.sh
+date.sh
+appinstaller.sh
+bootloader.sh
+users.sh
+final.sh
