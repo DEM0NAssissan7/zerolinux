@@ -17,3 +17,4 @@ pacman -r /mnt --noconfirm -Syu
 pacman -r /mnt --noconfirm -S networkmanager grub
 echo systemctl enable NetworkManager | arch-chroot /mnt
 echo
+exit

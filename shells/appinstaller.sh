@@ -24,3 +24,4 @@ pacman -r /mnt --noconfirm -S $bones $minimal $standard
 fi
 echo Finished installing applications!
 echo
+exit

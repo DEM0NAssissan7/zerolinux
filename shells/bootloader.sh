@@ -6,3 +6,4 @@ pacman -r /mnt --noconfirm -S efibootmgr
 echo "grub-install $devins;grub-mkconfig -o /boot/grub/grub.cfg" | arch-chroot /mnt
 echo Finished installing the bootloader!
 fi
+exit
