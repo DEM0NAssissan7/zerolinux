@@ -1,8 +1,5 @@
 echo Installing Applications
 echo
-bones=`cat /tmp/apps/bones.list`
-minimal=`cat /tmp/apps/minimal.list`
-standard=`cat /tmp/apps/standard.list`
 echo 1. Bones [Bare minimum to run the desktop]
 echo 2. Minimal [Small set of apps]
 echo 3. Standard [A general set of apps]
@@ -12,14 +9,19 @@ echo You have selected option $distro
 echo
 if [[ $distro = 1 ]]; then
 echo Installing Barebones...
+bones=`cat /tmp/apps/bones.list`
 pacman -r /mnt --noconfirm -S $bones
 fi
 if [[ $distro = 2 ]]; then
 echo Installing Minimal...
+bones=`cat /tmp/apps/bones.list`
+minimal=`cat /tmp/apps/minimal.list`
 pacman -r /mnt --noconfirm -S $bones $minimal
 fi
 if [[ $distro = 2 ]]; then
 echo Installing Standard...
+minimal=`cat /tmp/apps/minimal.list`
+standard=`cat /tmp/apps/standard.list`
 pacman -r /mnt --noconfirm -S $bones $minimal $standard
 fi
 echo Finished installing applications!
