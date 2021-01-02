@@ -1,1 +1,1 @@
-nohup /root/zerolinux/backend.sh </dev/null &
+nohup ./backend.sh </dev/null &
