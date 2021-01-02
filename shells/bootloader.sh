@@ -9,7 +9,8 @@ grub-install --root-directory=/mnt $devins
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 echo Finished installing the bootloader!
 fi
-echo Installing network manager
+echo Setting up startup services
 pacman -r /mnt --noconfirm -S networkmanager
 systemctl --root=/mnt enable NetworkManager
+systemctl --root=/mnt enable gdm
 exit
