@@ -63,7 +63,8 @@ echo
 echo Installing extra software
 echo
 echo Loading install files into tmp file
-cp -r apps mnt/tmp/
+mkdir /mnt/tmp
+cp -r apps /mnt/tmp/
 echo
 arch-chroot /mnt
 yes | pacman -S networkmanager grub
