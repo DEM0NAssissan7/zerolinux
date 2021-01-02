@@ -11,7 +11,7 @@ echo Select your date and time
 echo
 lsblk
 echo
-read "Enter the device you wish to install Zero Linux on: " devins
+read -p "Enter the device you wish to install Zero Linux on: " devins
 echo Entering partitioner...
 cfdisk $devins
 echo
@@ -34,7 +34,7 @@ fi
 echo Formatting partitions...
 mkfs.ext4 $rootpart
 if [[ $bootpart ]]; then mkfs.ext4 $bootpart;fi
-if [[ $efipart ]]; then mkfs.vfat $efipart;fi
+if [[ $efipart ]]; then mkfs.fat -F 32 $efipart;fi
 if [[ $homepart ]]; then mkfs.ext4 $homepart;fi
 #if [[ $swappart ]]; then mkfs.ext4 $swappart;fi
 echo
@@ -81,7 +81,7 @@ echo 1. Bones [Bare minimum to run the desktop]
 echo 2. Minimal [Small set of apps]
 echo 3. Standard [A general set of apps]
 echo
-read -p "Select which number to install" distro
+read -p "Select which number to install [1,2,3]: " distro
 echo You have selected option $distro
 echo
 
@@ -104,8 +104,9 @@ echo
 echo Finished installing applications!
 echo
 echo Install bootloader
-grub-install $devins
-grub-mkconfig -o /boot/grub/grub.cfg
+pacman -r /mnt --noconfirm -S efibootmgr
+echo grub-install $devins | arch-chroot /mnt
+echo grub-mkconfig -o /boot/grub/grub.cfg | arch-chroot /mnt
 echo
 echo Set password for root
 passwd -R /mnt
