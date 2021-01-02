@@ -10,7 +10,7 @@ rm -r /tmp/zerolinux
 cp -r ../zerolinux /tmp
 
 #Chmodding the scripts
-chmod +x /tmp/zerolinux/nocrash.sh
+chmod +x nocrash.sh
 chmod +x /tmp/zerolinux/shells/date.sh
 chmod +x /tmp/zerolinux/shells/partitioner.sh
 chmod +x /tmp/zerolinux/shells/sysinstaller.sh
@@ -19,7 +19,7 @@ chmod +x /tmp/zerolinux/shells/bootloader.sh
 chmod +x /tmp/zerolinux/shells/users.sh
 
 #Executing the scripts
-bash /tmp/zerolinux/nocrash.sh
+bash nocrash.sh
 bash /tmp/zerolinux/shells/date.sh
 bash /tmp/zerolinux/shells/partitioner.sh
 bash /tmp/zerolinux/shells/sysinstaller.sh
