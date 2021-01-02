@@ -61,7 +61,7 @@ echo Generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
 echo
 echo Loading install files into tmp file
-cp -r apps /mnt/tmp/
+cp -r apps /tmp/
 echo
 echo Installing extra software
 echo
@@ -81,9 +81,7 @@ echo 1. Bones [Bare minimum to run the desktop]
 echo 2. Minimal [Small set of apps]
 echo 3. Standard [A general set of apps]
 echo
-while [[ $distro != "" ]]; do
 read -p "Select which number to install" distro
-done
 echo You have selected option $distro
 echo
 
