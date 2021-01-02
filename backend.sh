@@ -84,17 +84,14 @@ echo
 read -p "Select which number to install [1,2,3]: " distro
 echo You have selected option $distro
 echo
-
 if [[ $distro = 1 ]]; then
 echo Installing Barebones...
 pacman -r /mnt --noconfirm -S $bones
 fi
-
 if [[ $distro = 2 ]]; then
 echo Installing Minimal...
 pacman -r /mnt --noconfirm -S $bones $minimal
 fi
-
 if [[ $distro = 2 ]]; then
 echo Installing Standard...
 pacman -r /mnt --noconfirm -S $bones $minimal $standard
