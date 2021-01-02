@@ -1,5 +1,4 @@
-#!/bin/zsh
-source ~/.zshrc
+#!/bin/bash
 
 echo Welcome to the Zero Linux install script!
 echo
