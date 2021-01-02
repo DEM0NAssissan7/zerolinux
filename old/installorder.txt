@@ -1,8 +1,0 @@
-1. Set time and date
-2. Partition > Format > Mount
-3. Pacstrap
-4. Fstab > Chroot > Grub
-5-1. Install network manager and enable at startup
-5-2. Install the apps included in the distro
-6. Setup users
-7. Finished!
