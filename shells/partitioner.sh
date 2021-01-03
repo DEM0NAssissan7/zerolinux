@@ -2,7 +2,7 @@ if [[ /mnt/boot ]];then
 echo Unmounting /mnt
 umount -R /mnt
 fi
-lsblk
+lsblk | grep -i "drive"
 echo
 read -p "Enter the device you wish to install Zero Linux on [eg. /dev/sda]: /dev/" devins
 devins="/dev/$devins"
@@ -21,7 +21,7 @@ echo Entering partitioner...
 cfdisk $devins
 echo
 echo Select partitions to format
-lsblk
+lsblk | grep -i "part"
 echo
 read -p "Select the partition to install your root partition [REQUIRED]: " rootpart
 echo

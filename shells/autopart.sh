@@ -39,4 +39,5 @@ mount $devins"2" /mnt
 mkdir /mnt/boot
 mount $devins"1" /mnt/boot
 fi
+echo Finished partitioning!
 fi

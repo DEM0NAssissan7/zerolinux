@@ -6,7 +6,7 @@ insnumber=`cat /tmp/insnumber.dat`
 if [[ insnumber = 2 || insnumber = 3 ]]; then
 arch-chroot /mnt gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
 arch-chroot /mnt gsettings set org.gnome.desktop.interface gtk-theme "mawlspack-theme"
-arch-chroot /mnt gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+arch-chroot /mnt gsettings set org.gnome.desktop.interface icon-theme "Papirus"
 arch-chroot /mnt gsettings set org.gnome.desktop.interface cursor-theme "mawlspack-cursor"
 arch-chroot /mnt gsettings set org.gnome.shell.extensions.user-theme name "mawlspack-shell"
 
