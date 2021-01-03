@@ -15,26 +15,32 @@ cp /tmp/zerolinux/extras/aurapps.sh /mnt/home/install/
 chmod +x /mnt/install/mawlspack-install.sh
 chmod +x /mnt/install/aurapps.sh
 
-barecmd="arch-chroot /mnt pacman --noconfirm -S xorg-server xorg-xinit gnome-shell nautilus gnome-terminal gnome-control-center xdg-user-dirs gdm"
-minicmd="arch-chroot /mnt pacman --noconfirm -S gnome-tweaks firefox nano gedit wget curl gnome-backgrounds gnome-calculator gnome-system-monitor gnome-icon-theme zsh"
-standardcmd="arch-chroot /mnt pacman --noconfirm -S htop neofetch lm_sensors pavucontrol gnome-screenshot"
+barecmd="pacman --noconfirm -S xorg-server xorg-xinit gnome-shell nautilus gnome-terminal gnome-control-center xdg-user-dirs gdm"
+minicmd="pacman --noconfirm -S gnome-tweaks firefox nano gedit wget curl gnome-backgrounds gnome-calculator gnome-system-monitor gnome-icon-theme zsh"
+standardcmd="pacman --noconfirm -S htop neofetch lm_sensors pavucontrol gnome-screenshot"
 
 if [[ $insnumber != 2 && $insnumber != 3 ]];then
 echo Installing Barebones...
-bash -c $barecmd
+
+arch-chroot /mnt bash -c $barecmd
+
 arch-chroot /mnt bash /home/install/mawlspack-install.sh
 fi
 if [[ $insnumber = 2 ]]; then
 echo Installing Minimal...
-bash -c $barecmd
-bash -c $minicmd
+
+arch-chroot /mnt bash -c $barecmd
+arch-chroot /mnt bash -c $minicmd
+
 arch-chroot /mnt bash /home/install/mawlspack-install.sh
 fi
 if [[ $insnumber = 3 ]]; then
 echo Installing Standard...
-bash -c $barecmd
-bash -c $minicmd
-bash -c $standardcmd
+
+arch-chroot /mnt bash -c $barecmd
+arch-chroot /mnt bash -c $minicmd
+arch-chroot /mnt bash -c $standardcmd
+
 arch-chroot /mnt bash /home/install/mawlspack-install.sh
 arch-chroot /mnt bash /home/install/aurapps.sh
 fi
