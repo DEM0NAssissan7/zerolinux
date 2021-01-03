@@ -16,14 +16,13 @@ arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set
 
 #Fonts
 arch-chroot /mnt pacman --noconfirm -S freetype2 fontconfig cairo
-cp -r /tmp/zerolinux/gnome-configs/ubuntu /usr/share/fonts/
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface font-name "Cantarell 11"
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface document-font-name "Sans 11"
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface monospace-font-name "Monospace 13"
 rm -r /home/install
-mkdir /mnt/home/*/.config
-mkdir /mnt/home/*/.config/fontconfig
-cp /tmp/zerolinux/gnome-configs/fonts.conf /mnt/home/*/.config/fontconfig/
+mkdir /mnt/home/$username/.config
+mkdir /mnt/home/$username/.config/fontconfig
+cp /tmp/zerolinux/gnome-configs/fonts.conf /mnt/home/$username/.config/fontconfig/
 
 #Locales
 arch-chroot /mnt localedef -f UTF-8 -i en_US en_US.UTF-8
@@ -37,8 +36,8 @@ cp /tmp/zerolinux/gnome-configs/terminal-profile.dconf /mnt/home/install/
 arch-chroot /mnt sudo -u $username dconf dump /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ < home/install/terminal-profile.dconf
 cp -r /tmp/zerolinux/gnome-configs/.oh-my-zsh /mnt/root/
 rm -r /home/install
-cp /tmp/zerolinux/gnome-configs/.zshrc /mnt/home/*/
-arch-chroot /mnt sudo -u $username chsh -s $(which zsh) $(whoami)
+cp /tmp/zerolinux/gnome-configs/.zshrc /mnt/home/$username/
+arch-chroot /mnt chsh -s $(which zsh) $(whoami)
 
 fi
 
