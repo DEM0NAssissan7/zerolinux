@@ -14,4 +14,5 @@ pacman -r /mnt --noconfirm -S networkmanager
 systemctl --root=/mnt enable NetworkManager
 systemctl --root=/mnt enable gdm
 systemctl --root=/mnt enable pulseaudio
+systemctl --root=/mnt --system enable pulseaudio
 echo

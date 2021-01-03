@@ -24,10 +24,10 @@ read -p "Enter the swap partition [NOT SUPPORTED]: " swappart
 fi
 read -p "Are you SURE these drives are correct? [ENTER] "
 echo Formatting partitions...
-mkfs.ext4 $rootpart
-if [[ $bootpart ]]; then mkfs.ext4 $bootpart;fi
+mkfs.ext4 -F $rootpart
+if [[ $bootpart ]]; then mkfs.ext4 -F $bootpart;fi
 if [[ $efipart ]]; then mkfs.fat -F 32 $efipart;fi
-if [[ $homepart ]]; then mkfs.ext4 $homepart;fi
+if [[ $homepart ]]; then mkfs.ext4 -F $homepart;fi
 #if [[ $swappart ]]; then mkfs.ext4 $swappart;fi
 echo
 echo Mounting partitions
