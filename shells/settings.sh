@@ -11,7 +11,7 @@ arch-chroot /mnt dbus-launch --exit-with-session gsettings set org.gnome.desktop
 arch-chroot /mnt dbus-launch --exit-with-session gsettings set org.gnome.shell.extensions.user-theme name "mawlspack-shell"
 
 #Favorite Apps
-arch-chroot /mnt dbus-launch --exit-with-session gsettings set org.gnome.shell
+arch-chroot /mnt dbus-launch --exit-with-session gsettings set org.gnome.shell favorite-apps ['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop']
 
 #Fonts
 arch-chroot pacman --noconfirm -S freetype2 fontconfig cairo
