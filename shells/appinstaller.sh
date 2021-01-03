@@ -24,7 +24,7 @@ echo Installing Barebones...
 
 arch-chroot /mnt bash -c $barecmd
 
-arch-chroot /mnt bash /home/install/mawlspack-install.sh
+#arch-chroot /mnt bash /home/install/mawlspack-install.sh
 fi
 if [[ $insnumber = 2 ]]; then
 echo Installing Minimal...
