@@ -5,7 +5,7 @@ if [[ $res3 = y ]]; then
 echo Installing bootloader
 pacman -r /mnt --noconfirm -S efibootmgr grub
 devins=`cat /tmp/devins`
-arch-chroot /mnt grub-install
+arch-chroot /mnt grub-install $devins
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 echo Finished installing the bootloader!
 fi
