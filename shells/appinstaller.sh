@@ -23,7 +23,7 @@ standardcmd="pacman --noconfirm -S htop neofetch lm_sensors pavucontrol gnome-sc
 if [[ $insnumber = 1 ]];then
 echo Installing Barebones...
 
-arch-chroot /mnt "bash -c $barecmd"
+arch-chroot /mnt sudo -s -H $barecmd
 
 #arch-chroot /mnt bash /home/install/mawlspack-install.sh
 fi
@@ -31,17 +31,17 @@ fi
 if [[ $insnumber = 2 ]]; then
 echo Installing Minimal...
 
-arch-chroot /mnt bash -c $barecmd
-arch-chroot /mnt bash -c $minicmd
+arch-chroot /mnt sudo -s -H $barecmd
+arch-chroot /mnt sudo -s -H $minicmd
 
 arch-chroot /mnt bash /home/install/mawlspack-install.sh
 fi
 if [[ $insnumber = 3 ]]; then
 echo Installing Standard...
 
-arch-chroot /mnt bash -c $barecmd
-arch-chroot /mnt bash -c $minicmd
-arch-chroot /mnt bash -c $standardcmd
+arch-chroot /mnt sudo -s -H $barecmd
+arch-chroot /mnt sudo -s -H $minicmd
+arch-chroot /mnt sudo -s -H $standardcmd
 
 arch-chroot /mnt bash /home/install/mawlspack-install.sh
 arch-chroot /mnt bash /home/install/aurapps.sh

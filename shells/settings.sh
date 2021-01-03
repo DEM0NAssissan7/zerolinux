@@ -13,7 +13,6 @@ cp -r /tmp/zerolinux/gnome-configs/ubuntu /usr/share/fonts/
 arch-chroot /mnt gsettings set org.gnome.desktop.interface font-name "Ubuntu 11"
 arch-chroot /mnt gsettings set org.gnome.desktop.interface document-font-name "Sans 11"
 arch-chroot /mnt gsettings set org.gnome.desktop.interface monospace-font-name "Ubuntu Mono 13"
-#arch-chroot /mnt gsettings set org.gnome.desktop.interface font-name "Sans 10"
 
 #Nautilus
 arch-chroot /mnt gsettings set org.gnome.nautilus.preferences show-hidden-files true
