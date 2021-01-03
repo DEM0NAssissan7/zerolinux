@@ -1,3 +1,7 @@
+if [[ /mnt/boot ]];then
+echo Unmounting /mnt
+umount -R /mnt
+fi
 lsblk
 echo
 read -p "Enter the device you wish to install Zero Linux on [eg. /dev/sda]: /dev/" devins

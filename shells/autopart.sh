@@ -5,6 +5,7 @@ if [[ $res1 = y ]];then
 echo Destroying data...
 devins="/dev/sda"
 if [[ /tmp/devins.dat ]]; then devins=`cat /tmp/devins.dat`; else devins="/dev/sda";fi
+echo Partitioning $devins"..."
 dd if=/dev/zero of=$devins bs=512 count=1 conv=notrunc
 
 echo Detecting boot type
@@ -23,6 +24,7 @@ mkfs.fat -F 32 $devins"1"
 mkfs.ext4 -F $devins"2"
 echo Mounting partitions
 mount $devins"2" /mnt
+mkdir /mnt/boot
 mkdir /mnt/boot/efi
 mount $devins"1" /mnt/boot/efi
 fi
