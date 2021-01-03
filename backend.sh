@@ -3,7 +3,7 @@
 clear
 echo Welcome to the Zero Linux install script!
 echo
-echo -FYI- -This is not made for newbies- -kinda-
+echo -FYI- -This is not made for newbies-
 echo
 read -p "Press enter to continue..."
 timedatectl set-ntp true
