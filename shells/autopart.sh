@@ -1,10 +1,10 @@
-echo WARNING: THIS WILL DELETE ALL OF YOUR DATA!
 read -p "Are you SURE you want to continue? [y/N] " res1
 if [[ $res1 = "" ]];then res1=n;fi
 if [[ $res1 = y ]];then
 #exec code
 echo Destroying data...
-if [[ /tmp/devins ]]; then devins=`cat /tmp/devins`; else devins=/dev/sda;fi
+devins="/dev/sda"
+if [[ /tmp/devins ]]; then devins=`cat /tmp/devins`; else devins="/dev/sda";fi
 dd if=/dev/zero of=$devins bs=512 count=1 conv=notrunc
 
 echo Detecting boot type
@@ -17,7 +17,7 @@ system=bios
 fi
 echo Creating partitions
 if [[ $system = efi ]];then
-sfdisk < /tmp/zerolinux/extras/efi.sfdisk
+sfdisk $devins< /tmp/zerolinux/extras/efi.sfdisk
 echo Formatting partitions
 mkfs.fat -F 32 $devins"1"
 mkfs.ext4 -F $devins"2"

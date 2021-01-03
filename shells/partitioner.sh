@@ -2,10 +2,7 @@ lsblk
 echo
 read -p "Enter the device you wish to install Zero Linux on [eg. /dev/sda]: /dev/" devins
 devins="/dev/$devins"
-$devins >> /tmp/devins
-echo Entering partitioner...
-cfdisk $devins
-echo
+$devins > /tmp/devins
 echo Would you like to automate the install [Recommended for newbies]
 read -p "THIS WILL DESTROY ALL OF YOUR DATA ON THE SELECTED DRIVE [Y/n]" res1
 if [[ $res1 = "" ]];then res1=y;fi
@@ -14,6 +11,9 @@ bash /tmp/zerolinux/shells/autopart.sh
 
 else
 
+echo Entering partitioner...
+cfdisk $devins
+echo
 echo Select partitions to format
 lsblk
 echo
