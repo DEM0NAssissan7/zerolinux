@@ -16,16 +16,13 @@ chmod +x /mnt/home/install/mawlspack-install.sh
 chmod +x /mnt/home/install/aurapps.sh
 
 barecmd="pacman --noconfirm -S xorg-server xorg-xinit gnome-shell nautilus gnome-terminal gnome-control-center xdg-user-dirs gdm"
-minicmd="pacman --noconfirm -S gnome-tweaks firefox nano gedit wget curl gnome-backgrounds gnome-calculator gnome-system-monitor gnome-icon-theme zsh"
+minicmd="pacman --noconfirm -S gnome-tweaks firefox nano gedit wget curl gnome-backgrounds gnome-calculator gnome-system-monitor gnome-icon-theme zsh git"
 standardcmd="pacman --noconfirm -S htop neofetch lm_sensors pavucontrol gnome-screenshot"
 
 #if [[ $insnumber != 2 && $insnumber != 3 ]];then
 if [[ $insnumber = 1 ]];then
 echo Installing Barebones...
-
 arch-chroot /mnt sudo -s -H $barecmd
-
-#arch-chroot /mnt bash /home/install/mawlspack-install.sh
 fi
 
 if [[ $insnumber = 2 ]]; then

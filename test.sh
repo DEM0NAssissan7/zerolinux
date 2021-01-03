@@ -3,7 +3,7 @@
 mkdir /mnt/home
 mkdir /mnt/home/install
 cp /tmp/zerolinux/extras/aurapps.sh /mnt/home/install/
-chmod +x /mnt/install/aurapps.sh
+chmod +x /mnt/home/install/aurapps.sh
 
 useradd -R /mnt -g wheel admin
 
