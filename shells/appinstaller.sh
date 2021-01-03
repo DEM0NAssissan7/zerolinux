@@ -19,13 +19,15 @@ barecmd="pacman --noconfirm -S xorg-server xorg-xinit gnome-shell nautilus gnome
 minicmd="pacman --noconfirm -S gnome-tweaks firefox nano gedit wget curl gnome-backgrounds gnome-calculator gnome-system-monitor gnome-icon-theme zsh"
 standardcmd="pacman --noconfirm -S htop neofetch lm_sensors pavucontrol gnome-screenshot"
 
-if [[ $insnumber != 2 && $insnumber != 3 ]];then
+#if [[ $insnumber != 2 && $insnumber != 3 ]];then
+if [[ $insnumber = 1 ]];then
 echo Installing Barebones...
 
 arch-chroot /mnt bash -c $barecmd
 
 #arch-chroot /mnt bash /home/install/mawlspack-install.sh
 fi
+
 if [[ $insnumber = 2 ]]; then
 echo Installing Minimal...
 
