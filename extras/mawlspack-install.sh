@@ -6,7 +6,3 @@ chmod +x install.sh
 cd ..
 rm -r mawlspack
 pacman -S gnome-shell-extensions
-gsettings set org.gnome.desktop.interface gtk-theme "mawlspack-theme"
-gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
-gsettings set org.gnome.desktop.interface cursor-theme "mawlspack-cursor"
-gsettings set org.gnome.shell.extensions.user-theme name "mawlspack-shell"
