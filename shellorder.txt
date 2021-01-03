@@ -5,4 +5,5 @@ date.sh
 users.sh
 appinstaller.sh
 bootloader.sh
+setings.sh
 final.sh
