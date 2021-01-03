@@ -2,9 +2,7 @@
 
 mkdir /mnt/home
 mkdir /mnt/home/install
-cp /tmp/zerolinux/extras/mawlspack-install.sh /mnt/home/install/
 cp /tmp/zerolinux/extras/aurapps.sh /mnt/home/install/
-chmod +x /mnt/install/mawlspack-install.sh
 chmod +x /mnt/install/aurapps.sh
 
 useradd -R /mnt -g wheel admin
