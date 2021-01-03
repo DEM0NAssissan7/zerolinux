@@ -23,7 +23,6 @@ arch-chroot /mnt pacman --noconfirm -Sq freetype2 fontconfig cairo
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface font-name "Cantarell 11"
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface document-font-name "Sans 11"
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface monospace-font-name "Monospace 13"
-rm -r /mnt/home/install
 mkdir /mnt/home/$username/.config
 mkdir /mnt/home/$username/.config/fontconfig
 cp /tmp/zerolinux/gnome-configs/fonts.conf /mnt/home/$username/.config/fontconfig/
@@ -37,8 +36,8 @@ echo Configuring ZSH
 mkdir /mnt/home/install/
 cp /tmp/zerolinux/gnome-configs/terminal-profile.dconf /mnt/home/install/
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session dconf dump /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ < /home/install/terminal-profile.dconf
-cp -r /tmp/zerolinux/gnome-configs/.oh-my-zsh /mnt/root/
-rm -r /home/install
+
+cp -r /tmp/zerolinux/gnome-configs/.oh-my-zsh /mnt/home/$username/
 cp /tmp/zerolinux/gnome-configs/.zshrc /mnt/home/$username/
 arch-chroot /mnt chsh -s $(which zsh) $(whoami)
 
