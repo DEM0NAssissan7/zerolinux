@@ -34,12 +34,12 @@ arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set
 #Zsh
 echo Configuring ZSH
 mkdir /mnt/home/install/
-cp /tmp/zerolinux/gnome-configs/terminal-profile.dconf /mnt/home/install/
-arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session dconf dump /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ < /home/install/terminal-profile.dconf
 
-cp -r /tmp/zerolinux/gnome-configs/oh-my-zsh /mnt/home/$username/
-echo /tmp/zerolinux/gnome-configs/zshrc > /mnt/home/$username/.zshrc
-mv /mnt/home/$username/oh-my-zsh /mnt/home/$username/.oh-my-zsh
+cp /tmp/zerolinux/gnome-configs/terminal-profile.dconf /mnt/home/install/
+arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session dconf load /org/gnome/terminal/legacy/profiles:/ < /home/install/terminal-profile.dconf
+
+unzip /tmp/zerolinux/gnome-configs/oh-my-zsh.zip -d /mnt/home/$username/.oh-my-zsh
+echo `cat /tmp/zerolinux/gnome-configs/zshrc` > /mnt/home/$username/.zshrc
 arch-chroot /mnt chsh -s $(which zsh) $(whoami)
 
 fi

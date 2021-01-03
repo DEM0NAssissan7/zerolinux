@@ -2,7 +2,7 @@ if [[ /mnt/boot ]];then
 echo Unmounting /mnt
 umount -R /mnt
 fi
-lsblk | grep -i "drive"
+lsblk | grep -i "disk"
 echo
 read -p "Enter the device you wish to install Zero Linux on [eg. /dev/sda]: /dev/" devins
 devins="/dev/$devins"
