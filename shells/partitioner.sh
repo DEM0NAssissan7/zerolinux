@@ -2,7 +2,9 @@ lsblk
 echo
 read -p "Enter the device you wish to install Zero Linux on [eg. /dev/sda]: /dev/" devins
 devins="/dev/$devins"
-$devins > /tmp/devins
+touch /tmp/devins.dat
+mkdir /tmp
+$devins > /tmp/devins.dat
 echo Would you like to automate the install [Recommended for newbies]
 read -p "THIS WILL DESTROY ALL OF YOUR DATA ON THE SELECTED DRIVE [Y/n]" res1
 if [[ $res1 = "" ]];then res1=y;fi
