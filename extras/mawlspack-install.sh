@@ -5,4 +5,4 @@ chmod +x install.sh
 ./install.sh root
 cd ..
 rm -r mawlspack
-pacman -S gnome-shell-extensions
+pacman --noconfirm -S gnome-shell-extensions
