@@ -5,8 +5,8 @@ if [[ $res1 = y ]];then
 echo Destroying data...
 devins="/dev/sda"
 if [[ /tmp/devins.dat ]]; then devins=`cat /tmp/devins.dat`; else devins="/dev/sda";fi
+dd if=/dev/zero of=$devins  bs=512  count=1
 echo Partitioning $devins"..."
-dd if=/dev/zero of=$devins bs=512 count=1 conv=notrunc
 
 echo Detecting boot type
 if [[ /sys/firmware/efi ]]; then
@@ -39,5 +39,6 @@ mount $devins"2" /mnt
 mkdir /mnt/boot
 mount $devins"1" /mnt/boot
 fi
+
 echo Finished partitioning!
 fi
