@@ -1,7 +1,7 @@
 echo WARNING: THIS WILL DELETE ALL OF YOUR DATA!
 read -p "Are you SURE you want to continue? [y/N] " res1
-if [[ res1 = "" ]];then res1=n;fi
-if [[ res1 = y ]];then
+if [[ $res1 = "" ]];then res1=n;fi
+if [[ $res1 = y ]];then
 #exec code
 echo Destroying data...
 if [[ /tmp/devins ]]; then devins=`cat /tmp/devins`; else devins=/dev/sda;fi
@@ -37,3 +37,4 @@ mount $devins"2" /mnt
 mkdir /mnt/boot
 mount $devins"1" /mnt/boot
 fi
+exit
