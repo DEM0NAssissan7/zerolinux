@@ -8,6 +8,7 @@ passwd -R /mnt
 read -p "Type the name of the user you wish to use: " username
 useradd -R /mnt -mg wheel $username
 echo Set the password for $username
+echo $username > /tmp/username.dat
 passwd -R /mnt $username
 useradd -R /mnt -g wheel admin
 echo Configuring sudo...
