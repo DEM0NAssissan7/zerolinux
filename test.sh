@@ -7,5 +7,5 @@ cp /tmp/zerolinux/extras/aurapps.sh /mnt/home/install/
 chmod +x /mnt/install/mawlspack-install.sh
 chmod +x /mnt/install/aurapps.sh
 
-arch-chroot /mnt bash /home/install/mawlspack-install.sh
+#arch-chroot /mnt bash /home/install/mawlspack-install.sh
 arch-chroot /mnt bash /home/install/aurapps.sh
