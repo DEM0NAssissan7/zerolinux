@@ -1,7 +1,7 @@
 echo Applying custom settings...
 echo
 insnumber=`cat /tmp/insnumber.dat`
-username=`cat /tmn/username.dat
+username=`cat /tmn/username.dat`
 
 #Theme
 if [[ insnumber = 2 || insnumber = 3 ]]; then
