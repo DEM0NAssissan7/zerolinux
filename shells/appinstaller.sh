@@ -12,8 +12,8 @@ mkdir /mnt/home
 mkdir /mnt/home/install
 cp /tmp/zerolinux/extras/mawlspack-install.sh /mnt/home/install/
 cp /tmp/zerolinux/extras/aurapps.sh /mnt/home/install/
-chmod +x /mnt/install/mawlspack-install.sh
-chmod +x /mnt/install/aurapps.sh
+chmod +x /mnt/home/install/mawlspack-install.sh
+chmod +x /mnt/home/install/aurapps.sh
 
 barecmd="pacman --noconfirm -S xorg-server xorg-xinit gnome-shell nautilus gnome-terminal gnome-control-center xdg-user-dirs gdm"
 minicmd="pacman --noconfirm -S gnome-tweaks firefox nano gedit wget curl gnome-backgrounds gnome-calculator gnome-system-monitor gnome-icon-theme zsh"
@@ -23,7 +23,7 @@ standardcmd="pacman --noconfirm -S htop neofetch lm_sensors pavucontrol gnome-sc
 if [[ $insnumber = 1 ]];then
 echo Installing Barebones...
 
-arch-chroot /mnt bash -c $barecmd
+arch-chroot /mnt "bash -c $barecmd"
 
 #arch-chroot /mnt bash /home/install/mawlspack-install.sh
 fi
