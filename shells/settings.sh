@@ -1,10 +1,10 @@
 echo Applying custom settings...
 echo
 insnumber=`cat /tmp/insnumber.dat`
-username=`cat /tmn/username.dat`
+username=`cat /tmp/username.dat`
 
 #Theme
-if [[ insnumber = 2 || insnumber = 3 ]]; then
+if [[ $insnumber = 2 || $insnumber = 3 ]]; then
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface gtk-theme "mawlspack-theme"
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface icon-theme "Papirus"
