@@ -19,7 +19,7 @@ arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set
 
 #Fonts
 echo Configuring fonts
-arch-chroot /mnt pacman --noconfirm -Sq freetype2 fontconfig cairo
+arch-chroot /mnt pacman --noconfirm -Sq freetype2 fontconfig cairo unzip
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface font-name "Cantarell 11"
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface document-font-name "Sans 11"
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface monospace-font-name "Monospace 13"
