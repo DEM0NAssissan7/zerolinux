@@ -49,6 +49,12 @@ fi
 echo Configuring GNOME locales
 arch-chroot /mnt localedef -f UTF-8 -i en_US en_US.UTF-8
 
+#Battery Icon
+#arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface show-battery-percentage
+
+#12 Hour Time
+arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface clock-format '12h'
+
 #Mouse Acceleration
 echo Adjusting mouse settings
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'flat'
