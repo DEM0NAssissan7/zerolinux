@@ -1,0 +1,9 @@
+partitioner.sh
+sysinstaller.sh
+locales.sh
+date.sh
+users.sh
+appinstaller.sh
+bootloader.sh
+setings.sh
+final.sh
