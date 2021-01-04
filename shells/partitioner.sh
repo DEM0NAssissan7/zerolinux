@@ -10,7 +10,7 @@ touch /tmp/devins.dat
 mkdir /tmp
 echo $devins > /tmp/devins.dat
 echo Would you like to automate the install [Recommended for newbies]
-read -p "THIS WILL DESTROY ALL OF YOUR DATA ON THE SELECTED DRIVE [Y/n]" res1
+read -p "THIS WILL DESTROY ALL OF THE DATA ON THE SELECTED DRIVE [Y/n]" res1
 if [[ $res1 = "" ]];then res1=y;fi
 if [[ $res1 = y ]];then
 bash /tmp/zerolinux/shells/autopart.sh

@@ -15,7 +15,7 @@ arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set
 
 #Favorite Apps
 echo Setting favorite apps
-arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.shell favorite-apps ['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop']
+arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop']"
 
 #Fonts
 echo Configuring fonts
@@ -36,10 +36,10 @@ echo Configuring ZSH
 mkdir /mnt/home/install/
 
 cp /tmp/zerolinux/gnome-configs/terminal-profile.dconf /mnt/home/install/
-arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session dconf load /org/gnome/terminal/legacy/profiles:/ < /home/install/terminal-profile.dconf
+arch-chroot /mnt sudo -u $username dconf load /org/gnome/terminal/legacy/profiles:/ < /home/install/terminal-profile.dconf
 
-pacman --noconfirm -S unzip
-unzip /tmp/zerolinux/gnome-configs/oh-my-zsh.zip -d /mnt/home/$username/.oh-my-zsh
+cp /tmp/zerolinux/gnome-configs/omz.sh /mnt/home/install/
+arch-chroot /mnt sudo -u $username sh /home/install/omz.sh
 echo `cat /tmp/zerolinux/gnome-configs/zshrc` > /mnt/home/$username/.zshrc
 arch-chroot /mnt chsh -s $(which zsh) $(whoami)
 
