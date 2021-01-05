@@ -17,7 +17,7 @@ arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set
 echo Settings background
 mkdir /mnt/usr/share/backgrounds/
 cp -r /tmp/zerolinux/artwork/exported/* /mnt/usr/share/backgrounds/
-arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/Cubits.jpg'
+arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/Operating%20for%20you.jpg'
 
 #Favorite Apps
 echo Setting favorite apps
