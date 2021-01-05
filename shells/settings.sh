@@ -46,8 +46,12 @@ mkdir /mnt/home/install/
 
 cp /tmp/zerolinux/gnome-configs/omz.sh /mnt/home/install/
 arch-chroot /mnt pacman --noconfirm -Syu git
+
 arch-chroot /mnt sh /home/install/omz.sh
-cat /tmp/zerolinux/gnome-configs/zshrc > /mnt/home/$username/.zshrc
+cp -r /mnt/root/.oh-my-zsh /mnt/home/$username/
+echo "export ZSH='/home/$username/.oh-my-zsh'" > /mnt/home/$username/.zshrc
+cat /tmp/zerolinux/gnome-configs/zshrc >> /mnt/home/$username/.zshrc
+
 #cp -r /mnt/home/$username/.oh-my-zsh /root/
 #cp /mnt/etc/sudoers /tmp/
 #echo "$username   ALL=(ALL) NOPASSWD: ALL" >> /mnt/etc/sudoers
@@ -62,6 +66,9 @@ fi
 #Locales
 echo Configuring locales
 arch-chroot /mnt localedef -f UTF-8 -i en_US en_US.UTF-8
+
+#Workspaces
+arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.shell.overrides workspaces-only-on-primary false
 
 #Battery Icon
 #arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface show-battery-percentage
