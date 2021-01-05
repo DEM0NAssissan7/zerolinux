@@ -8,15 +8,15 @@ if [[ $insnumber = 2 || $insnumber = 3 ]]; then
 #Theme
 echo Applying theme settings
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
-arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gnome-extensions enable desktop-icons@csoriano
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface gtk-theme "mawlspack-theme"
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface icon-theme "Papirus"
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface cursor-theme "mawlspack-cursor"
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.shell.extensions.user-theme name "mawlspack-shell"
 
 #Background
+echo Settings background
 mkdir /mnt/usr/share/backgrounds/
-cp -r /tmp/zerolinux/artwork/exported/ /mnt/usr/share/backgrounds/
+cp -r /tmp/zerolinux/artwork/exported/* /mnt/usr/share/backgrounds/
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/Cubits.jpg'
 
 #Favorite Apps
@@ -69,6 +69,9 @@ arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set
 #Nautilus
 echo Configuring Nautilus
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.nautilus.preferences show-hidden-files true
+
+#Hot Corner
+arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.shell enable-hot-corners false
 
 # Ctrl-Alt-T Terminal Shortcut
 echo Configuring Terminal Shortcut
