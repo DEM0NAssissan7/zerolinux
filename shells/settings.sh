@@ -72,7 +72,7 @@ echo Configuring Nautilus
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.nautilus.preferences show-hidden-files true
 
 #Hot Corner
-arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.shell enable-hot-corners false
+arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface enable-hot-corners false
 
 # Ctrl-Alt-T Terminal Shortcut
 echo Configuring Terminal Shortcut

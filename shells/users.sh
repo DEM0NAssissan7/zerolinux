@@ -14,4 +14,4 @@ useradd -R /mnt -g wheel admin
 echo Configuring sudo...
 echo "%wheel ALL=(ALL) ALL" >> /mnt/etc/sudoers
 #echo "%sudo ALL=(ALL) ALL" >> /mnt/etc/sudoers
-echo "Defaults !tty_tickets" >> /mnt/etc/sudoers
+#echo "Defaults !tty_tickets" >> /mnt/etc/sudoers
