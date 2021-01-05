@@ -184,7 +184,8 @@ EOF
 
   # Prompt for user choice on changing the default login shell
   printf "${YELLOW}Do you want to change your default shell to zsh? [Y/n]${RESET} "
-  op=n
+  #read opt
+  opt=Y
   case $opt in
     y*|Y*|"") echo "Changing the shell..." ;;
     n*|N*) echo "Shell change skipped."; return ;;
@@ -225,6 +226,14 @@ EOF
     echo $SHELL > ~/.shell.pre-oh-my-zsh
   else
     grep "^$USER:" /etc/passwd | awk -F: '{print $7}' > ~/.shell.pre-oh-my-zsh
+  fi
+
+  # Actually change the default shell to zsh
+  if ! chsh -s "$zsh"; then
+    fmt_error "chsh command unsuccessful. Change your default shell manually."
+  else
+    export SHELL="$zsh"
+    echo "${GREEN}Shell successfully changed to '$zsh'.${RESET}"
   fi
 
   echo
@@ -305,6 +314,8 @@ EOF
     echo "${YELLOW}Run zsh to try it out.${RESET}"
     exit
   fi
+
+  exec zsh -l
 }
 
 main "$@"
