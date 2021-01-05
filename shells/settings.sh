@@ -48,6 +48,7 @@ cp /tmp/zerolinux/gnome-configs/omz.sh /mnt/home/install/
 arch-chroot /mnt pacman -Syu git
 arch-chroot /mnt sudo -u $username sh /home/install/omz.sh
 cat /tmp/zerolinux/gnome-configs/zshrc > /mnt/home/$username/.zshrc
+cp -r /mnt/home/$username/.oh-my-zsh /root/
 arch-chroot /mnt chsh -s $(which zsh) $(whoami)
 
 fi

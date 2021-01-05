@@ -26,3 +26,4 @@ echo "cd /home/install/gnome-shell-extension-desktop-icons-ng && sudo -u admin m
 rm -r /mnt/home/install
 
 cp /tmp/sudoers /mnt/etc/sudoers
+arch-chroot /mnt pacman --noconfirm -S gnome-shell-extensions
