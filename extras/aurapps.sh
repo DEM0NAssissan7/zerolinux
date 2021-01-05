@@ -1,5 +1,5 @@
 mv /mnt/etc/sudoers /tmp/
-cp /tmp/zerolinux/extras/sudoers /mnt/etc/sudoers
+cp /tmp/zerolinux/extras/sudoers /mnt/etc/
 
 git clone https://aur.archlinux.org/google-chrome.git
 mkdir /mnt/home/install
@@ -22,5 +22,4 @@ chmod -R 777 /mnt/home/install/
 echo "cd /home/install/gnome-shell-extension-desktop-icons-ng && sudo -u admin makepkg -si" | arch-chroot /mnt 
 rm -r /mnt/home/install
 
-rm /mnt/etc/sudoers
-cp /tmp/sudoers /mnt/etc/
+cp /tmp/sudoers /mnt/etc/sudoers
