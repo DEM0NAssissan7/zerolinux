@@ -13,6 +13,11 @@ arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface cursor-theme "mawlspack-cursor"
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.shell.extensions.user-theme name "mawlspack-shell"
 
+#Background
+mkdir /mnt/usr/share/backgrounds/
+cp -r /tmp/zerolinux/artwork/exported/ /mnt/usr/share/backgrounds/
+arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.shell.extensions.user-theme name "mawlspack-shell"
+
 #Favorite Apps
 echo Setting favorite apps
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop']"
