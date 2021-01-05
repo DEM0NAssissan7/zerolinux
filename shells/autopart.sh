@@ -18,7 +18,8 @@ system=bios
 fi
 echo Creating partitions
 if [[ $system = efi ]];then
-sfdisk $devins< /tmp/zerolinux/extras/efi.sfdisk
+parted $devins --script mklabel gpt
+sfdisk $devins < /tmp/zerolinux/extras/efi.sfdisk
 echo Formatting partitions
 mkfs.fat -F 32 $devins"1"
 mkfs.ext4 -F $devins"2"
@@ -30,7 +31,8 @@ mount $devins"1" /mnt/boot/efi
 fi
 
 if [[ $system = bios ]];then
-sfdisk < /tmp/zerolinux/extras/bios.sfdisk
+parted $devins --script mklabel msdos
+sfdisk $devins < /tmp/zerolinux/extras/bios.sfdisk
 echo Formatting partitions
 mkfs.ext4 -F $devins"1"
 mkfs.ext4 -F $devins"2"

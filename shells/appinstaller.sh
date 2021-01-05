@@ -5,7 +5,7 @@ echo 2. Minimal [Small set of apps] [For people who like more customizability]
 echo 3. Standard [A general set of apps and tools] *Recommended
 echo
 read -p "Select which number to install [1 / 2 / 3]: " insnumber
-echo You have selected option $insnumber
+echo You have selected option $insnumberAm
 echo $insnumber > /tmp/insnumber.dat
 echo
 mkdir /mnt/home
