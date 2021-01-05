@@ -52,7 +52,7 @@ cat /tmp/zerolinux/gnome-configs/zshrc > /mnt/home/$username/.zshrc
 cp /mnt/etc/sudoers /tmp/
 echo "$username ALL=(ALL) NOPASSWD: ALL" >> /mnt/etc/sudoers 
 
-arch-chroot /mnt sudo -u $username chsh -s $(which zsh) $(whoami)
+arch-chroot /mnt sudo -u $username chsh -s $(which zsh)
 
 mv /tmp/sudoers /mnt/etc/sudoers
 
