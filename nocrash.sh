@@ -1,2 +1,2 @@
-nohup ../zerolinux/backend.sh </dev/null &
-#stty -tostop
+#nohup ../zerolinux/backend.sh </dev/null &
+stty -tostop
