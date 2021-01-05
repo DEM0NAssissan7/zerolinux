@@ -8,6 +8,7 @@ if [[ $insnumber = 2 || $insnumber = 3 ]]; then
 #Theme
 echo Applying theme settings
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
+arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gnome-extensions enable desktop-icons@csoriano
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface gtk-theme "mawlspack-theme"
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface icon-theme "Papirus"
 arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface cursor-theme "mawlspack-cursor"
@@ -16,7 +17,7 @@ arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set
 #Background
 mkdir /mnt/usr/share/backgrounds/
 cp -r /tmp/zerolinux/artwork/exported/ /mnt/usr/share/backgrounds/
-arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.shell.extensions.user-theme name "mawlspack-shell"
+arch-chroot /mnt sudo -u $username dbus-launch --exit-with-session gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/Cubits.jpg'
 
 #Favorite Apps
 echo Setting favorite apps
@@ -44,6 +45,7 @@ cp /tmp/zerolinux/gnome-configs/terminal-profile.dconf /mnt/home/install/
 arch-chroot /mnt sudo -u $username dconf load /org/gnome/terminal/legacy/profiles:/ < /home/install/terminal-profile.dconf
 
 cp /tmp/zerolinux/gnome-configs/omz.sh /mnt/home/install/
+arch-chroot /mnt pacman -S git
 arch-chroot /mnt sudo -u $username sh /home/install/omz.sh
 echo `cat /tmp/zerolinux/gnome-configs/zshrc` > /mnt/home/$username/.zshrc
 arch-chroot /mnt chsh -s $(which zsh) $(whoami)

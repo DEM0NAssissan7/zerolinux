@@ -41,7 +41,7 @@ arch-chroot /mnt sudo -s -H $minicmd
 arch-chroot /mnt sudo -s -H $standardcmd
 
 arch-chroot /mnt bash /home/install/mawlspack-install.sh
-arch-chroot /mnt bash /home/install/aurapps.sh
+bash /home/install/aurapps.sh
 fi
 rm -r /mnt/home/install
 echo Finished installing applications!

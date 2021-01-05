@@ -1,6 +1,9 @@
 mv /mnt/etc/sudoers /tmp/
 cp /tmp/zerolinux/extras/sudoers /mnt/etc/
 
+#Install dependencies
+pacman -S git meson libxss
+
 git clone https://aur.archlinux.org/google-chrome.git
 mkdir /mnt/home/install
 mv google-chrome /mnt/home/install/
