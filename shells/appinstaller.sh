@@ -16,7 +16,7 @@ chmod +x /mnt/home/install/mawlspack-install.sh
 chmod +x /tmp/zerolinux/extras/aurapps.sh
 
 barecmd="pacman --noconfirm -S xorg-server xorg-xinit gnome-shell nautilus gnome-terminal gnome-control-center xdg-user-dirs gdm"
-minicmd="pacman --noconfirm -S gnome-tweaks firefox gedit curl gnome-backgrounds gnome-system-monitor gnome-icon-theme zsh vim"
+minicmd="pacman --noconfirm -S gnome-tweaks firefox gedit curl gnome-backgrounds gnome-system-monitor gnome-icon-theme zsh vim man"
 standardcmd="pacman --noconfirm -S htop neofetch lm_sensors pavucontrol gnome-screenshot gnome-calculator nano wget"
 
 #if [[ $insnumber != 2 && $insnumber != 3 ]];then
