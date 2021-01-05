@@ -50,9 +50,9 @@ arch-chroot /mnt sh /home/install/omz.sh
 cat /tmp/zerolinux/gnome-configs/zshrc > /mnt/home/$username/.zshrc
 #cp -r /mnt/home/$username/.oh-my-zsh /root/
 cp /mnt/etc/sudoers /tmp/
-echo "$username ALL=(ALL) NOPASSWD: ALL" >> /mnt/etc/sudoers 
+echo "$username   ALL=(ALL) NOPASSWD: ALL" >> /mnt/etc/sudoers
 
-arch-chroot /mnt sudo -u $username chsh -s $(which zsh)
+arch-chroot /mnt sudo -u $username chsh -s /usr/bin/zsh
 
 mv /tmp/sudoers /mnt/etc/sudoers
 
