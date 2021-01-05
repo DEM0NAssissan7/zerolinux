@@ -20,6 +20,7 @@ bash /tmp/zerolinux/shells/locales.sh
 bash /tmp/zerolinux/shells/date.sh
 bash /tmp/zerolinux/shells/users.sh
 bash /tmp/zerolinux/shells/appinstaller.sh
+bash /tmp/zerolinux/shells/drivers.sh
 bash /tmp/zerolinux/shells/bootloader.sh
 bash /tmp/zerolinux/shells/settings.sh
 bash /tmp/zerolinux/shells/final.sh

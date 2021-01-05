@@ -13,7 +13,7 @@ mkdir /mnt/home/install
 cp /tmp/zerolinux/extras/mawlspack-install.sh /mnt/home/install/
 cp /tmp/zerolinux/extras/aurapps.sh /mnt/home/install/
 chmod +x /mnt/home/install/mawlspack-install.sh
-chmod +x /mnt/home/install/aurapps.sh
+chmod +x /tmp/zerolinux/extras/aurapps.sh
 
 barecmd="pacman --noconfirm -S xorg-server xorg-xinit gnome-shell nautilus gnome-terminal gnome-control-center xdg-user-dirs gdm"
 minicmd="pacman --noconfirm -S gnome-tweaks firefox gedit curl gnome-backgrounds gnome-system-monitor gnome-icon-theme zsh vim"
@@ -41,7 +41,7 @@ arch-chroot /mnt sudo -s -H $minicmd
 arch-chroot /mnt sudo -s -H $standardcmd
 
 arch-chroot /mnt bash /home/install/mawlspack-install.sh
-bash /home/install/aurapps.sh
+bash /tmp/zerolinux/extras/aurapps.sh
 fi
 rm -r /mnt/home/install
 echo Finished installing applications!

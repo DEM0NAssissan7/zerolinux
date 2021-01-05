@@ -45,9 +45,9 @@ cp /tmp/zerolinux/gnome-configs/terminal-profile.dconf /mnt/home/install/
 arch-chroot /mnt sudo -u $username dconf load /org/gnome/terminal/legacy/profiles:/ < /home/install/terminal-profile.dconf
 
 cp /tmp/zerolinux/gnome-configs/omz.sh /mnt/home/install/
-arch-chroot /mnt pacman -S git
+arch-chroot /mnt pacman -Syu git
 arch-chroot /mnt sudo -u $username sh /home/install/omz.sh
-echo `cat /tmp/zerolinux/gnome-configs/zshrc` > /mnt/home/$username/.zshrc
+cat /tmp/zerolinux/gnome-configs/zshrc > /mnt/home/$username/.zshrc
 arch-chroot /mnt chsh -s $(which zsh) $(whoami)
 
 fi
